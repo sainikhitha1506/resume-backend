@@ -9,14 +9,22 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000") // Allow React frontend
+@CrossOrigin(origins = "*")  // Allow all origins (you can limit this later)
 public class ResumeController {
 
+    // Default route for home
     @GetMapping("/")
+    public String home() {
+        return "Welcome to Smart Resume Analyzer Backend!";
+    }
+
+    // Test route
+    @GetMapping("/test")
     public String testApi() {
         return "Backend is running!";
     }
 
+    // Resume upload route
     @PostMapping("/upload")
     public ResponseEntity<Map<String, Object>> uploadResume(@RequestParam("file") MultipartFile file) {
         Map<String, Object> response = new HashMap<>();
@@ -26,7 +34,7 @@ public class ResumeController {
             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
 
-        // Simulate resume scoring logic (for now random)
+        // Simulate resume scoring (random score for now)
         int score = new Random().nextInt(100);
         response.put("fileName", file.getOriginalFilename());
         response.put("score", score);
