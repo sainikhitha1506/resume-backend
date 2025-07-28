@@ -1,50 +1,54 @@
-# Smart Resume Analyzer
+Smart Resume Analyzer
+Hey! This is my Spring Boot backend project where I built a simple API that checks resumes and gives a score (just random for now). I made this project to practice REST APIs, file upload logic, and cloud deployment.
 
-An **AI-powered Spring Boot backend** that evaluates resumes and returns a score based on simulated logic. This project is designed to demonstrate **REST API development**, **file handling**, and **deployment skills**.
+🚀 What’s inside this project?
+You can upload a resume (.pdf or .docx) and get a random score (0–100).
+It’s a Spring Boot REST API, so easy to connect with any frontend (like React).
+I enabled CORS so React/Angular can directly talk to this backend.
+It’s live! I deployed it on Render (free hosting).
 
-## 🚀 Features
-- **Resume Upload API** – Upload resumes in `.pdf` or `.docx` format.
-- **Dynamic Resume Scoring** – Generates a random score (0–100) for now (AI integration possible later).
-- **Spring Boot Backend** – RESTful API built with Java and Spring Boot.
-- **CORS Enabled** – Ready to integrate with any React/Angular frontend.
-- **Cloud-Ready** – Deployed on Render.
+📂 Folder Setup (In simple words)
+This is how I arranged my files:
 
----
-
-## 📂 Project Structure
-├── src
-│ ├── main
-│ │ ├── java/com/example/demo
-│ │ │ ├── DemoApplication.java
-│ │ │ ├── ResumeController.java
-│ │ │ ├── ResumeRepository.java
-│ │ │ ├── SecurityConfig.java
-│ │ └── resources/application.properties
-│ └── test
-├── pom.xml
-├── Procfile
-└── README.md
-
-yaml
+css
 Copy
 Edit
+├── src
+│   ├── main
+│   │   ├── java/com/example/demo
+│   │   │   ├── DemoApplication.java   (Main starting point)
+│   │   │   ├── ResumeController.java  (All API logic is here)
+│   │   │   ├── ResumeRepository.java
+│   │   │   ├── SecurityConfig.java
+│   │   └── resources/application.properties
+│   └── test
+├── pom.xml   (Dependencies file)
+├── Procfile  (For Render Deployment)
+└── README.md
+🔑 How to Use the API?
+1. Check if backend is running
+Open this in browser:
 
----
+bash
+Copy
+Edit
+https://resume-backend-9wos.onrender.com/api/
+You’ll see:
 
-## 🔑 API Endpoints
+arduino
+Copy
+Edit
+Backend is running!
+2. Upload a Resume
+Send a POST request here:
 
-### 1. Test Backend
-**GET** `https://resume-backend-9wos.onrender.com/api/`  
-**Response:**
-```json
-"Backend is running!"
-2. Upload Resume
-POST https://resume-backend-9wos.onrender.com/api/upload
-Form-data:
+bash
+Copy
+Edit
+https://resume-backend-9wos.onrender.com/api/upload
+Add a form-data field: file (your resume file).
 
-file: Upload your resume (PDF/DOCX).
-
-Response:
+Response looks like this:
 
 json
 Copy
@@ -53,21 +57,22 @@ Edit
   "fileName": "JohnDoeResume.pdf",
   "score": 85
 }
-🛠️ Tech Stack
-Backend: Java, Spring Boot
+🛠️ Tech I Used
+Java + Spring Boot for backend.
 
-Build Tool: Maven
+Maven for building the project.
 
-Cloud Hosting: Render
+Render for free deployment.
 
-Version Control: Git & GitHub
+GitHub for version control.
 
-💡 Future Enhancements
-Integrate AI/ML model for resume keyword analysis.
+💡 My Future Plans
+Add AI/ML to actually analyze keywords in resumes.
 
-Connect with a React-based frontend dashboard.
+Create a React dashboard that connects to this backend.
 
-Deploy with CI/CD pipelines.
+Automate everything using CI/CD pipelines.
 
-👤 Author
-Sai Nikhitha
+👤 About Me
+I’m Sai Nikhitha. I built this project to improve my backend + cloud skills.
+https://github.com/sainikhitha1506
